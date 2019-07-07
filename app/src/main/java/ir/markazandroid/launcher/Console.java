@@ -93,15 +93,17 @@ public class Console implements Closeable {
             ReaderThread readerThread = new ReaderThread(process);
             readerThread.start();
             DataOutputStream os = new DataOutputStream(process.getOutputStream());
-            os.writeBytes(s+"\n");
+            //os.writeBytes(s+"\n");
             os.flush();
             //os.writeBytes("exit\n");
             //os.flush();
             //process.waitFor();
             //writer.write(s);
             //writer.flush();
-            //process.waitFor();
+            process.waitFor();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

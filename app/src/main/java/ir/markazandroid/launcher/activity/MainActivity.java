@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         findViewById(R.id.switchMode).setOnLongClickListener(v -> {
-            switchToUserMode();
+            launchDefaultLauncher();
+            //switchToUserMode();
             return true;
         });
     }
@@ -53,23 +54,26 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         //super.onBackPressed();
 
-        if (userModeEnabled){
-            launchDefaultLauncher();
-            userModeEnabled=false;
-        }
+       // if (userModeEnabled){
+       //     launchDefaultLauncher();
+       //     userModeEnabled=false;
+       // }
     }
 
     private void switchToUserMode() {
-        console.write("pm unhide "+LauncherApplication.DEFAULT_SYSTEMUI_PACKAGE);
-        console.write("am startservice -n com.android.systemui/.SystemUIService");
+        console.w("pm unhide "+LauncherApplication.DEFAULT_SYSTEMUI_PACKAGE);
+        console.w("am startservice -n com.android.systemui/.SystemUIService");
         userModeEnabled = true;
         Toast.makeText(this, " ", Toast.LENGTH_LONG).show();
     }
 
 
     private void launchDefaultLauncher() {
-        console.write("pm enable "+LauncherApplication.DEFAULT_LAUNCHER_PACKAGE);
-        console.write("am start -n com.android.launcher3/.Launcher");
+        console.w("pm enable "+LauncherApplication.DEFAULT_LAUNCHER_PACKAGE);
+        console.w("am start --user 0 -n com.softwinner.launcher/.Launcher");
+        //Intent intent = getPackageManager().getLaunchIntentForPackage(LauncherApplication.DEFAULT_LAUNCHER_PACKAGE);
+        //startActivity(intent);
+        //finish();
     }
 
 

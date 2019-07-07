@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 def vMajor = 1
-def vMinor = 1
+def vMinor = 2
 def vPatch = 0
 def vSuffix = /*"GN"*/ "IOT20A"
 
