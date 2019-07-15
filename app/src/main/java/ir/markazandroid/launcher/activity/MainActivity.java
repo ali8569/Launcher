@@ -1,6 +1,5 @@
 package ir.markazandroid.launcher.activity;
 
-import android.content.Intent;
 import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +7,7 @@ import android.view.Display;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import ir.markazandroid.launcher.Console;
+import ir.markazandroid.launcher.util.Console;
 import ir.markazandroid.launcher.LauncherApplication;
 import ir.markazandroid.launcher.R;
 

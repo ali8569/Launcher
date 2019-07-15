@@ -1,4 +1,4 @@
-package ir.markazandroid.launcher;
+package ir.markazandroid.launcher.util;
 
 import android.util.Log;
 

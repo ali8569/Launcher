@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
 
 def vMajor = 1
-def vMinor = 1
-def vPatch = 0
-def vSuffix = /*"GN"*/ "IOT20A"
+def vMinor = 3
+def vPatch = 6
+def vSuffix = /*"GN"*/ "DS"
 
 android {
     compileSdkVersion 27
@@ -43,6 +43,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.13-beta-2'
